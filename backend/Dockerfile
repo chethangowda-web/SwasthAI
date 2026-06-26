@@ -7,15 +7,6 @@ ENV PORT=8000
 
 WORKDIR /app
 
-# Install system dependencies required for OpenCV and PostgreSQL
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
-    libpq-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
 # Copy python dependencies
 COPY requirements.txt /app/
 
